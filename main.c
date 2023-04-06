@@ -43,6 +43,24 @@ double Power(){
     result=pow(num1,num2);
     return result;
 }
+double Average(){
+    double cnt=0,sum=0,avg;
+    double numbers;
+    char stop;
+    while(1){
+        scanf("%lf",&numbers);
+        scanf("%c",&stop);
+        if (stop=='s'){
+            break;
+        }
+        sum+=numbers;
+        cnt++;
+    }
+    avg=sum/cnt;
+
+    return avg;
+}
+
 
 
 
@@ -59,6 +77,7 @@ int main()
     printf("% => Modulus\n");
     printf("s => Square Root\n");
     printf("^ => Power of a number\n");
+    printf("a => Average of numbers\n");
     scanf("%c",&Operator);
     switch(Operator){
         case '+':
@@ -69,7 +88,6 @@ int main()
             result=Subtraction();
             printf("%lf",result);
             break;
-
         case '*':
             result=Multiplication();
             printf("%lf",result);
@@ -89,6 +107,12 @@ int main()
         case '^':
             result=Power();
             printf("%lf",result);
+            break;
+        case 'a':
+            result=Average();
+            printf("%lf",result);
+            break;
     }
+
     return 0;
 }
